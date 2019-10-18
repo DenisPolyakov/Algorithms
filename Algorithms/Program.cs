@@ -8,11 +8,15 @@ namespace Algorithms
 {
     class Program
     {
-        public static int[] SortedMass = { -4, -2, 1, 5, 8, 10, 15 };
+        public static int[] sortedArray = { -4, -2, 1, 5, 8, 9, 10 };
+        public static int[] unsortedArray = {0, -2, 4, 5, -4, -2, 10 };
         static void Main(string[] args)
         {
-            BinarySearch.IterativeBinarySearch(SortedMass, 10);
-            BinarySearch.RecursiveBinarySearch(SortedMass, 10, 0, SortedMass.Length-1);
+            Sort.BubbleSort(unsortedArray);
+
+
+            BinarySearch.IterativeBinarySearch(sortedArray, 10);
+            BinarySearch.RecursiveBinarySearch(sortedArray, 10, 0, sortedArray.Length-1);
             Console.ReadKey();
         }
 

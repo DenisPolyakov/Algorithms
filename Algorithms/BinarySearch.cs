@@ -9,20 +9,20 @@ namespace Algorithms
     class BinarySearch
     {
         //mass {0, 1, 2, 3, 4, 5}
-        public static int IterativeBinarySearch(int[] mass, int key)
+        public static int IterativeBinarySearch(int[] array, int key)
         {
             int left = 0;
-            int right = mass.Length - 1;
+            int right = array.Length - 1;
 
             while (left <= right)
             {
                 int middle = left + (right - left);
-                if (key < mass[middle])
+                if (key < array[middle])
                 {
 
                     right = middle - 1;
                 }
-                else if (key > mass[middle])
+                else if (key > array[middle])
                 {
                     left = middle + 1;
                 }
@@ -38,20 +38,20 @@ namespace Algorithms
 
 
         // -4, -2, 1, 5, 8, 10, 15      k10
-        public static int RecursiveBinarySearch(int[] mass, int key, int left, int right)
+        public static int RecursiveBinarySearch(int[] array, int key, int left, int right)
         {
             if (right >= left)
             {
                 int middle = left + (right - left) / 2;
-                if (key < mass[middle])
+                if (key < array[middle])
                 {
 
-                    RecursiveBinarySearch(mass, key, left, middle - 1);
+                    RecursiveBinarySearch(array, key, left, middle - 1);
                 }
-                else if (key > mass[middle])
+                else if (key > array[middle])
                 {
 
-                    RecursiveBinarySearch(mass, key, middle + 1, right);
+                    RecursiveBinarySearch(array, key, middle + 1, right);
                 }
                 else
                 {
